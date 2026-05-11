@@ -2,11 +2,11 @@
 
 ## Live Demo
 
-Frontend: https://task-manager-umber-two-79.vercel.app
+Frontend: [https://task-manager-umber-two-79.vercel.app](https://task-manager-umber-two-79.vercel.app)
 
-Backend API: https://task-manager-a40n.onrender.com
+Backend API: [https://task-manager-a40n.onrender.com](https://task-manager-a40n.onrender.com)
 
-GitHub Repository: https://github.com/Devesh7758/task-manager
+GitHub Repository: [https://github.com/Devesh7758/task-manager](https://github.com/Devesh7758/task-manager)
 
 ---
 
@@ -16,13 +16,23 @@ Task Manager is a modern full-stack project management web application built usi
 
 The application allows users to:
 
-- Register and login securely
-- Create and manage projects
-- Create and manage tasks
-- Update task status
-- View dashboard analytics
-- Access protected routes
-- Experience role-based access control (RBAC)
+* Register and login securely
+* Create and manage projects
+* Create and manage tasks
+* Update task status
+* View dashboard analytics
+* Access protected routes
+* Experience role-based access control (RBAC)
+
+The project was developed as a full-stack internship assessment project focusing on:
+
+* Backend architecture
+* REST APIs
+* Authentication & security
+* Database relationships
+* Responsive frontend UI
+* Dashboard visualization
+* Full deployment workflow
 
 ---
 
@@ -30,49 +40,62 @@ The application allows users to:
 
 ## Authentication System
 
-- User registration
-- User login
-- JWT authentication
-- Protected frontend routes
-- Protected backend routes
-- Persistent login using localStorage
+* User registration
+* User login
+* JWT authentication
+* Protected frontend routes
+* Protected backend routes
+* Persistent login using localStorage
 
 ## Role-Based Access Control (RBAC)
 
-- Admin middleware
-- Admin-only project deletion
-- Secure authorization flow
+* Admin middleware
+* Admin-only project deletion
+* Secure authorization flow
 
 ## Project Management
 
-- Create projects
-- Fetch projects
-- Delete projects
-- Real-time frontend updates
+* Create projects
+* Fetch projects
+* Delete projects
+* Project cards UI
+* Real-time frontend updates
 
 ## Task Management
 
-- Create tasks
-- Fetch tasks
-- Delete tasks
-- Update task status
-- Priority levels
-- Task-project relationships
+* Create tasks
+* Fetch tasks
+* Delete tasks
+* Update task status
+* Priority levels
+* Task-project relationships
 
 ## Dashboard Analytics
 
-- Total projects
-- Total tasks
-- Completed tasks
-- Pending tasks
+* Total projects
+* Total tasks
+* Completed tasks
+* Pending tasks
+* Live dashboard statistics
 
 ## Frontend Features
 
-- Responsive sidebar
-- Modern dark UI
-- Toast notifications
-- Loading states
-- Mobile responsive layout
+* Responsive sidebar
+* Modern dark UI
+* Toast notifications
+* Loading states
+* Protected pages
+* Responsive layout
+* Mobile sidebar support
+
+## Backend Features
+
+* Express.js REST APIs
+* MongoDB Atlas integration
+* Mongoose schemas
+* Relationship population
+* Authentication middleware
+* Error handling
 
 ---
 
@@ -80,32 +103,32 @@ The application allows users to:
 
 ## Frontend
 
-- React.js
-- Vite
-- Tailwind CSS
-- React Router DOM
-- Axios
-- React Hot Toast
+* React.js
+* Vite
+* Tailwind CSS
+* React Router DOM
+* Axios
+* React Hot Toast
 
 ## Backend
 
-- Node.js
-- Express.js
-- JWT Authentication
-- bcryptjs
-- CORS
-- dotenv
+* Node.js
+* Express.js
+* JWT Authentication
+* bcryptjs
+* CORS
+* dotenv
 
 ## Database
 
-- MongoDB Atlas
-- Mongoose
+* MongoDB Atlas
+* Mongoose
 
 ## Deployment
 
-- Frontend → Vercel
-- Backend → Render
-- Database → MongoDB Atlas
+* Frontend → Vercel
+* Backend → Render
+* Database → MongoDB Atlas
 
 ---
 
@@ -114,6 +137,29 @@ The application allows users to:
 ```bash
 frontend/
 backend/
+```
+
+## Frontend Structure
+
+```bash
+src/
+ ├── components/
+ ├── layouts/
+ ├── pages/
+ ├── services/
+ └── App.jsx
+```
+
+## Backend Structure
+
+```bash
+backend/
+ ├── config/
+ ├── controllers/
+ ├── middleware/
+ ├── models/
+ ├── routes/
+ └── server.js
 ```
 
 ---
@@ -150,6 +196,30 @@ DELETE /api/tasks/:id
 ```bash
 GET /api/dashboard
 ```
+
+---
+
+# Screenshots
+
+## Login Page
+
+(Add screenshot here)
+
+## Register Page
+
+(Add screenshot here)
+
+## Dashboard
+
+(Add screenshot here)
+
+## Projects Page
+
+(Add screenshot here)
+
+## Tasks Page
+
+(Add screenshot here)
 
 ---
 
@@ -194,22 +264,23 @@ npm run dev
 
 ## Frontend
 
-https://task-manager-umber-two-79.vercel.app
+[https://task-manager-umber-two-79.vercel.app](https://task-manager-umber-two-79.vercel.app)
 
 ## Backend
 
-https://task-manager-a40n.onrender.com
+[https://task-manager-a40n.onrender.com](https://task-manager-a40n.onrender.com)
 
 ---
 
 # Future Improvements
 
-- Edit project/task functionality
-- Search & filters
-- Drag-and-drop kanban board
-- Team collaboration
-- File attachments
-- Due dates & reminders
+* Edit project/task functionality
+* Search & filters
+* Drag-and-drop kanban board
+* Team collaboration
+* File attachments
+* Due dates & reminders
+* Activity logs
 
 ---
 
@@ -217,4 +288,4 @@ https://task-manager-a40n.onrender.com
 
 Devesh Dwivedi
 
-GitHub: https://github.com/Devesh7758
+GitHub: [https://github.com/Devesh7758]
