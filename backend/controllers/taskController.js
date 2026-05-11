@@ -8,6 +8,7 @@ const createTask = async (req, res) => {
       project,
       priority,
       assignedTo,
+      dueDate,
     } = req.body;
 
     const task = await Task.create({
@@ -16,6 +17,7 @@ const createTask = async (req, res) => {
       project,
       priority,
       assignedTo,
+      dueDate,
       createdBy: req.user._id,
     });
 
@@ -43,10 +45,8 @@ const getTasks = async (req, res) => {
   }
 };
 
-const updateTaskStatus = async (req, res) => {
+const updateTask = async (req, res) => {
   try {
-    const { status } = req.body;
-
     const task = await Task.findById(req.params.id);
 
     if (!task) {
@@ -55,7 +55,19 @@ const updateTaskStatus = async (req, res) => {
       });
     }
 
-    task.status = status || task.status;
+    task.title = req.body.title || task.title;
+
+    task.description =
+      req.body.description || task.description;
+
+    task.priority =
+      req.body.priority || task.priority;
+
+    task.status =
+      req.body.status || task.status;
+
+    task.dueDate =
+      req.body.dueDate || task.dueDate;
 
     const updatedTask = await task.save();
 
@@ -92,6 +104,6 @@ const deleteTask = async (req, res) => {
 module.exports = {
   createTask,
   getTasks,
-  updateTaskStatus,
+  updateTask,
   deleteTask,
 };

@@ -8,6 +8,7 @@ function Dashboard() {
     totalTasks: 0,
     completedTasks: 0,
     pendingTasks: 0,
+    overdueTasks: 0,
   });
 
   useEffect(() => {
@@ -17,11 +18,14 @@ function Dashboard() {
           localStorage.getItem("userInfo")
         );
 
-        const { data } = await API.get("/dashboard", {
-          headers: {
-            Authorization: `Bearer ${userInfo.token}`,
-          },
-        });
+        const { data } = await API.get(
+          "/dashboard",
+          {
+            headers: {
+              Authorization: `Bearer ${userInfo.token}`,
+            },
+          }
+        );
 
         setStats(data);
       } catch (error) {
@@ -38,9 +42,11 @@ function Dashboard() {
         Dashboard
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
         <div className="bg-slate-800 p-6 rounded-xl">
-          <h2 className="text-xl">Projects</h2>
+          <h2 className="text-xl">
+            Projects
+          </h2>
 
           <p className="text-4xl mt-4 text-blue-500">
             {stats.totalProjects}
@@ -48,7 +54,9 @@ function Dashboard() {
         </div>
 
         <div className="bg-slate-800 p-6 rounded-xl">
-          <h2 className="text-xl">Tasks</h2>
+          <h2 className="text-xl">
+            Tasks
+          </h2>
 
           <p className="text-4xl mt-4 text-yellow-400">
             {stats.totalTasks}
@@ -56,7 +64,9 @@ function Dashboard() {
         </div>
 
         <div className="bg-slate-800 p-6 rounded-xl">
-          <h2 className="text-xl">Completed</h2>
+          <h2 className="text-xl">
+            Completed
+          </h2>
 
           <p className="text-4xl mt-4 text-green-500">
             {stats.completedTasks}
@@ -64,10 +74,22 @@ function Dashboard() {
         </div>
 
         <div className="bg-slate-800 p-6 rounded-xl">
-          <h2 className="text-xl">Pending</h2>
+          <h2 className="text-xl">
+            Pending
+          </h2>
+
+          <p className="text-4xl mt-4 text-orange-400">
+            {stats.pendingTasks}
+          </p>
+        </div>
+
+        <div className="bg-slate-800 p-6 rounded-xl">
+          <h2 className="text-xl">
+            Overdue
+          </h2>
 
           <p className="text-4xl mt-4 text-red-500">
-            {stats.pendingTasks}
+            {stats.overdueTasks}
           </p>
         </div>
       </div>

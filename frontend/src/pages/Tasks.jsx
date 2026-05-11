@@ -15,6 +15,7 @@ function Tasks() {
     description: "",
     priority: "medium",
     project: "",
+    dueDate: "",
   });
 
   const userInfo = JSON.parse(
@@ -78,6 +79,7 @@ function Tasks() {
         description: "",
         priority: "medium",
         project: "",
+        dueDate: "",
       });
 
       fetchTasks();
@@ -196,6 +198,14 @@ function Tasks() {
           ))}
         </select>
 
+        <input
+          type="date"
+          name="dueDate"
+          value={formData.dueDate}
+          onChange={handleChange}
+          className="p-3 rounded bg-slate-700 outline-none"
+        />
+
         <button className="bg-blue-500 py-3 rounded">
           {loading ? "Loading..." : "Add Task"}
         </button>
@@ -220,12 +230,31 @@ function Tasks() {
                 <p className="text-sm mt-2 text-blue-400">
                   Project: {task.project?.title}
                 </p>
+
+                {task.dueDate && (
+                  <p className="text-sm mt-2 text-red-400">
+                    Due:{" "}
+                    {new Date(
+                      task.dueDate
+                    ).toLocaleDateString()}
+                  </p>
+                )}
               </div>
 
-              <div className="flex gap-3 items-center">
+              <div className="flex gap-3 items-center flex-wrap">
                 <span className="bg-yellow-500 px-3 py-1 rounded">
                   {task.priority}
                 </span>
+
+                {task.dueDate &&
+                  new Date(task.dueDate) <
+                    new Date() &&
+                  task.status !==
+                    "completed" && (
+                    <span className="bg-red-500 px-3 py-1 rounded">
+                      Overdue
+                    </span>
+                  )}
 
                 <button
                   onClick={() =>
@@ -235,7 +264,8 @@ function Tasks() {
                     )
                   }
                   className={`px-3 py-1 rounded ${
-                    task.status === "completed"
+                    task.status ===
+                    "completed"
                       ? "bg-green-500"
                       : "bg-gray-500"
                   }`}
