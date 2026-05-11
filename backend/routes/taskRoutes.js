@@ -3,7 +3,7 @@ const express = require("express");
 const {
   createTask,
   getTasks,
-  updateTaskStatus,
+  updateTask,
   deleteTask,
 } = require("../controllers/taskController");
 
@@ -15,8 +15,9 @@ router.route("/")
   .post(protect, createTask)
   .get(protect, getTasks);
 
-router.put("/:id", protect, updateTaskStatus);
-
-router.delete("/:id", protect, deleteTask);
+router
+  .route("/:id")
+  .put(protect, updateTask)
+  .delete(protect, deleteTask);
 
 module.exports = router;
